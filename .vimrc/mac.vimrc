@@ -1,0 +1,54 @@
+set tabstop=2
+set softtabstop=2
+set expandtab
+
+" Fix lag
+set timeoutlen=1000 ttimeoutlen=10
+
+" Automatic toggling between line number modes
+set number relativenumber
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
+" vim-plug stuff
+call plug#begin()
+
+Plug 'itchyny/lightline.vim'
+Plug 'lifepillar/vim-solarized8'
+Plug 'altercation/vim-colors-solarized'
+
+" JS syntax and stuff
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'mattn/emmet-vim'
+Plug 'w0rp/ale'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+call plug#end()
+
+" status line tweaks
+set laststatus=2
+set noshowmode
+
+syntax enable
+set background=light
+colorscheme solarized
+
+" Emmet settings
+let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+    \      'extends' : 'jsx',
+    \  },
+  \}
+
+" prettier settings
+let g:prettier#config#print_width = 100
+let g:prettier#config#semi = 'false'
+let g:prettier#config#single_quote = 'true'
+let g:prettier#config#parser = 'flow'
