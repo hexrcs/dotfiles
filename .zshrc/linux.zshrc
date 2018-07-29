@@ -9,7 +9,7 @@ fi
 USER_NAME=$(whoami)
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/xiaoru/.oh-my-zsh
+  export ZSH=/home/$USER_NAME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -126,15 +126,15 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # added by Anaconda3 installer
-export PATH="/home/xiaoru/anaconda3/bin:$PATH"
+export PATH="/home/$USER_NAME/anaconda3/bin:$PATH"
 
-[[ -s "/home/xiaoru/.gvm/scripts/gvm" ]] && source "/home/xiaoru/.gvm/scripts/gvm"
+[[ -s "/home/xiaoru/.gvm/scripts/gvm" ]] && source "/home/$USER_NAME/.gvm/scripts/gvm"
 
 # yarn global bin
 export PATH="$(yarn global bin):$PATH"
 
 # OK, we are officially joining Flutter gang
-export PATH="/home/xiaoru/development/flutter/bin:$PATH"
+export PATH="/home/$USER_NAME/development/flutter/bin:$PATH"
 
 # This is for brew
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
